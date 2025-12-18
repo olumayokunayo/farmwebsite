@@ -2,13 +2,14 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import {
-  supabase,
-  Product,
-  Testimonial,
-  FarmStat,
-  GalleryItem,
-} from "@/lib/supabase";
+// import {
+//   supabase,
+//   Product,
+//   Testimonial,
+//   FarmStat,
+//   GalleryItem,
+// } from "@/lib/supabase";
+import { products, testimonials, gallery, stats } from "@/lib/data";
 import {
   Sprout,
   Package,
@@ -93,10 +94,10 @@ function AnimatedCounter({
 }
 
 export default function Home() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
-  const [stats, setStats] = useState<FarmStat[]>([]);
-  const [gallery, setGallery] = useState<GalleryItem[]>([]);
+  // const [products, setProducts] = useState<Product[]>([]);
+  // const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  // const [stats, setStats] = useState<FarmStat[]>([]);
+  // const [gallery, setGallery] = useState<GalleryItem[]>([]);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [showCallModal, setShowCallModal] = useState(false);
   const [openMap, setOpenMap] = useState(false);
@@ -111,31 +112,31 @@ export default function Home() {
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const [productsRes, testimonialsRes, statsRes, galleryRes] =
-        await Promise.all([
-          supabase.from("products").select("*").order("display_order"),
-          supabase
-            .from("testimonials")
-            .select("*")
-            .order("created_at", { ascending: false }),
-          supabase.from("farm_stats").select("*").order("display_order"),
-          supabase
-            .from("gallery")
-            .select("*")
-            .eq("is_featured", true)
-            .order("display_order"),
-        ]);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const [productsRes, testimonialsRes, statsRes, galleryRes] =
+  //       await Promise.all([
+  //         supabase.from("products").select("*").order("display_order"),
+  //         supabase
+  //           .from("testimonials")
+  //           .select("*")
+  //           .order("created_at", { ascending: false }),
+  //         supabase.from("farm_stats").select("*").order("display_order"),
+  //         supabase
+  //           .from("gallery")
+  //           .select("*")
+  //           .eq("is_featured", true)
+  //           .order("display_order"),
+  //       ]);
 
-      if (productsRes.data) setProducts(productsRes.data);
-      if (testimonialsRes.data) setTestimonials(testimonialsRes.data);
-      if (statsRes.data) setStats(statsRes.data);
-      if (galleryRes.data) setGallery(galleryRes.data);
-    }
+  //     if (productsRes.data) setProducts(productsRes.data);
+  //     if (testimonialsRes.data) setTestimonials(testimonialsRes.data);
+  //     if (statsRes.data) setStats(statsRes.data);
+  //     if (galleryRes.data) setGallery(galleryRes.data);
+  //   }
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   const productIcons: Record<string, any> = {
     broiler_chicks: Sprout,
