@@ -154,14 +154,14 @@ export default function Home() {
     );
   };
   const handleWhatsAppOrder = (productName: string) => {
-    const phone = "2349057253584";
+    const phone = "2348100749412";
     const message = `Hello Admof Farms, I would like to order ${productName}. Please share price and availability.`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
     window.open(url, "_blank");
   };
   const handleSendToWhatsApp = () => {
-    const phone = "2349057253584";
+    const phone = "2348100749412";
 
     const text = `
         Hello Admof Farms 👋
@@ -249,15 +249,15 @@ export default function Home() {
 
             {/* PHONE NUMBER */}
             <a
-              href="tel:+2349057253584"
+              href="tel:+22348100749412"
               className="block text-center text-lg font-semibold text-green-600 hover:underline"
             >
-              📞 +2349057253584
+              📞 +2348100749412
             </a>
 
             {/* WHATSAPP */}
             <a
-              href="https://wa.me/2349057253584"
+              href="https://wa.me/2348100749412"
               target="_blank"
               className="mt-4 block text-center text-sm text-green-600 hover:underline"
             >
@@ -876,7 +876,7 @@ export default function Home() {
                       </label>
                       <Input
                         type="tel"
-                        placeholder="+2349057253584"
+                        placeholder="+2348100749412"
                         value={contactForm.phone}
                         onChange={(e) =>
                           setContactForm({
@@ -934,7 +934,7 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="font-semibold text-gray-800">Phone</div>
-                      <div className="text-gray-600">+2349057253584</div>
+                      <div className="text-gray-600">+2348100749412</div>
                     </div>
                   </div>
 
@@ -982,7 +982,7 @@ export default function Home() {
 
               <Button
                 onClick={() =>
-                  window.open("https://wa.me/2349057253584", "_blank")
+                  window.open("https://wa.me/2348100749412", "_blank")
                 }
                 className="w-full bg-green-600 hover:bg-green-700 py-6 text-lg"
               >
@@ -1075,7 +1075,7 @@ export default function Home() {
                   <FaTiktok className="w-8 h-8 text-green-500 hover:text-white transition" />
                 </a>
                 <a
-                  href="https://wa.me/2349057253584"
+                  href="https://wa.me/2348100749412"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition"
