@@ -27,6 +27,7 @@ import {
   ChevronRight,
   MessageCircle,
   X,
+  Loader,
 } from "lucide-react";
 import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button";
@@ -41,7 +42,9 @@ const Farm3DScene = dynamic(() => import("@/components/Farm3DScene"), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-green-50 to-emerald-100">
-      <div className="animate-pulse text-green-600">Loading 3D Scene...</div>
+      <div className="animate-pulse text-green-600">
+        <Loader />
+      </div>
     </div>
   ),
 });
