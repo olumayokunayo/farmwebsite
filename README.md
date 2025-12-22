@@ -76,6 +76,6 @@ This website was developed to establish a strong digital presence, improve custo
 ### Installation
 
 ```bash
-git clone https://github.com/olumayokunayo/admof-farms-website.git
-cd admof-farms-website
+git clone https://github.com/olumayokunayo/farmwebsite.git
+cd farmwebsite
 npm install
